@@ -14,7 +14,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |groupname|string|null: false|
-|chatmember|text|
+
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
