@@ -1,0 +1,54 @@
+.main-chat
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__message
+        test
+      .main-header__left-box__member
+        member : riki shikura
+    .main-header__edit-btn
+      = link_to "Edit", "#", class: "a"
+  .messages
+    .message
+      .message__info
+        .message__info__name
+          riki shikura
+        .message__info__date
+          2020/03/05(Thu) 13:24:49
+      .message__text
+        aaaaa
+
+    .message
+      .message__info
+        .message__info__name
+          riki shikura
+        .message__info__date
+          2020/03/05(Thu) 13:24:49
+      .message__text
+        bbbbb
+
+    .message
+      .message__info
+        .message__info__name
+          riki shikura
+        .message__info__date
+          2020/03/05(Thu) 13:24:49
+      .message__text
+        ccccc  
+        
+    .message
+      .message__info
+        .message__info__name
+          riki shikura
+        .message__info__date
+          2020/03/05(Thu) 13:24:49
+      .message__text
+        ddddd
+  .form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}    
+
