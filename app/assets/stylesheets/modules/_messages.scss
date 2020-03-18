@@ -36,16 +36,22 @@
     color: #ffffff;
     width: 300px;
     padding: 20px 20px 0px;
+    overflow: scroll;
     .group {
       margin: 0px 0px 40px;
-      &__name {
-        padding: 0px 0px 5px;
-        font-size: 15px;
-        font-weight: bold;
-      }
-      &__message {
-          font-size: 11px;
-      }
+        .a {
+          text-decoration: none;
+          .group__name {
+            padding: 0px 0px 5px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+          }
+          .group__message {
+              font-size: 11px;
+              color: white;
+          }
+        }
     }
   }
 }
@@ -72,6 +78,11 @@
       &__member {
         color: #999999;
         font-size: 12px;
+        display: flex;
+        .list {
+          margin-left: 5px;
+        }
+
       }
     }
     &__edit-btn {
@@ -115,16 +126,20 @@
     }
   }
 
-  .form {
+  .footer {
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
 
     form {
       display: flex;
-      .input-box {
+      .input-text {
         display: flex;
         width: 100%;
+        position: relative;
+      }
+      .input-box {
+        display: flex;
         position: relative;
         &__text {
           height: 50px;
