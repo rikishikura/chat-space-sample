@@ -2,53 +2,25 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__message
-        test
-      .main-header__left-box__member
-        member : riki shikura
+        = @group.name
+      %ul.main-header__left-box__member
+        member:
+        - @group.users.each do |user|
+          %li.list
+            = user.name
     .main-header__edit-btn
-      = link_to "Edit", "#", class: "a"
+      = link_to "Edit", edit_group_path(@group), class: "a"
   .messages
-    .message
-      .message__info
-        .message__info__name
-          riki shikura
-        .message__info__date
-          2020/03/05(Thu) 13:24:49
-      .message__text
-        aaaaa
-
-    .message
-      .message__info
-        .message__info__name
-          riki shikura
-        .message__info__date
-          2020/03/05(Thu) 13:24:49
-      .message__text
-        bbbbb
-
-    .message
-      .message__info
-        .message__info__name
-          riki shikura
-        .message__info__date
-          2020/03/05(Thu) 13:24:49
-      .message__text
-        ccccc  
-        
-    .message
-      .message__info
-        .message__info__name
-          riki shikura
-        .message__info__date
-          2020/03/05(Thu) 13:24:49
-      .message__text
-        ddddd
-  .form
-    %form.new_message
+    = render @messages
+  .footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-text', placeholder: 'type a message'
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}    
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'    
+        
 
+
+  
