@@ -12,6 +12,7 @@
       = link_to "Edit", edit_group_path(@group), class: "a"
   .messages
     = render @messages
+     
   .footer
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'input-text', placeholder: 'type a message'
